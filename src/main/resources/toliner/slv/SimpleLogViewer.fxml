@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="toliner.slv.SimpleLogViewer">
-
+    <AnchorPane prefHeight="50.0" prefWidth="600.0" AnchorPane.topAnchor="0">
+        <JFXComboBox fx:id="lineCountSelector" prefWidth="80" AnchorPane.leftAnchor="10.0"/>
+        <Label text="lines hown" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="5.5">
+            <font>
+                <Font size="13.0"/>
+            </font>
+        </Label>
+    </AnchorPane>
 </AnchorPane>
