@@ -1,17 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
+<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.121"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="toliner.slv.SimpleLogViewer">
-    <AnchorPane prefHeight="50.0" prefWidth="600.0" AnchorPane.topAnchor="0">
+    <AnchorPane prefHeight="50.0" prefWidth="720.0" AnchorPane.topAnchor="0">
         <JFXComboBox fx:id="lineCountSelector" prefWidth="80" AnchorPane.leftAnchor="10.0"/>
         <Label text="lines hown" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="5.5">
             <font>
                 <Font size="13.0"/>
             </font>
         </Label>
+        <JFXTextField alignment="BOTTOM_LEFT" promptText="Filter text" AnchorPane.leftAnchor="170" prefWidth="100"
+                      fx:id="filterText"/>
+        <HBox prefHeight="50.0" AnchorPane.rightAnchor="5.0" spacing="5">
+            <JFXToggleNode fx:id="toggleFetal" pickOnBounds="false" styleClass="toggle-fetal">
+                <HBox>
+                    <Label text="0" fx:id="countFetal"/>
+                    <Label text=" fetals"/>
+                </HBox>
+            </JFXToggleNode>
+            <JFXToggleNode fx:id="toggleError" pickOnBounds="false" styleClass="toggle-error">
+                <HBox>
+                    <Label text="0" fx:id="countError"/>
+                    <Label text=" errors"/>
+                </HBox>
+            </JFXToggleNode>
+            <JFXToggleNode fx:id="toggleWarning" pickOnBounds="false" styleClass="toggle-warning">
+                <HBox>
+                    <Label text="0" fx:id="countWarning"/>
+                    <Label text=" warnings"/>
+                </HBox>
+            </JFXToggleNode>
+            <JFXToggleNode fx:id="toggleInfo" pickOnBounds="false" styleClass="toggle-info">
+                <HBox>
+                    <Label text="0" fx:id="countInfo"/>
+                    <Label text=" infos"/>
+                </HBox>
+            </JFXToggleNode>
+            <JFXToggleNode fx:id="toggleDebug" pickOnBounds="false" styleClass="toggle-debug">
+                <HBox>
+                    <Label text="0" fx:id="countDebug"/>
+                    <Label text=" debugs"/>
+                </HBox>
+            </JFXToggleNode>
+        </HBox>
     </AnchorPane>
 </AnchorPane>

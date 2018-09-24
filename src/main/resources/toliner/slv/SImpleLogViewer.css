@@ -1,0 +1,34 @@
+.toggle-fetal {
+    -fx-cursor: hand;
+    -jfx-toggle-color: rgba(205, 0, 16, 0.85);
+    -jfx-untoggle-color: rgba(205, 0, 16, 0.25);
+    -jfx-rippler-fill: RED;
+}
+
+.toggle-error {
+    -fx-cursor: hand;
+    -jfx-toggle-color: rgba(205, 60, 0, 0.85);
+    -jfx-untoggle-color: rgba(205, 60, 0, 0.25);
+    -jfx-rippler-fill: ORANGE;
+}
+
+.toggle-warning {
+    -fx-cursor: hand;
+    -jfx-toggle-color: rgba(205, 177, 0, 0.85);
+    -jfx-untoggle-color: rgba(205, 177, 0, 0.25);
+    -jfx-rippler-fill: YELLOW;
+}
+
+.toggle-info {
+    -fx-cursor: hand;
+    -jfx-toggle-color: rgb(185, 185, 185);
+    -jfx-untoggle-color: "ebebeb";
+    -jfx-rippler-fill: WHITE;
+}
+
+.toggle-debug {
+    -fx-cursor: hand;
+    -jfx-toggle-color:#a5a29e;
+    -jfx-untoggle-color: #e1dcd3;
+    -jfx-rippler-fill: WHITE;
+}
