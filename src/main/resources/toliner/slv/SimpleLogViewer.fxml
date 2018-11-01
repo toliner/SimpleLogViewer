@@ -1,51 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleNode?>
+<?import com.jfoenix.controls.JFXTreeTableColumn?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="toliner.slv.SimpleLogViewer">
-    <AnchorPane prefHeight="50.0" prefWidth="720.0" AnchorPane.topAnchor="0">
-        <JFXComboBox fx:id="lineCountSelector" prefWidth="80" AnchorPane.leftAnchor="10.0"/>
+
+<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="toliner.slv.SLVController">
+    <AnchorPane prefHeight="50.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <JFXComboBox fx:id="lineCountSelector" prefWidth="80" AnchorPane.leftAnchor="10.0" />
         <Label text="lines hown" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="5.5">
             <font>
-                <Font size="13.0"/>
+                <Font size="13.0" />
             </font>
         </Label>
-        <JFXTextField alignment="BOTTOM_LEFT" promptText="Filter text" AnchorPane.leftAnchor="170" prefWidth="100"
-                      fx:id="filterText"/>
-        <HBox prefHeight="50.0" AnchorPane.rightAnchor="5.0" spacing="5">
+        <JFXTextField fx:id="filterText" alignment="BOTTOM_LEFT" prefWidth="100" promptText="Filter text" AnchorPane.leftAnchor="170" />
+        <HBox prefHeight="50.0" spacing="5" AnchorPane.rightAnchor="5.0">
             <JFXToggleNode fx:id="toggleFetal" pickOnBounds="false" styleClass="toggle-fetal">
                 <HBox>
-                    <Label text="0" fx:id="countFetal"/>
-                    <Label text=" fetals"/>
+                    <Label fx:id="countFetal" text="0" />
+                    <Label text=" fetals" />
                 </HBox>
             </JFXToggleNode>
             <JFXToggleNode fx:id="toggleError" pickOnBounds="false" styleClass="toggle-error">
                 <HBox>
-                    <Label text="0" fx:id="countError"/>
-                    <Label text=" errors"/>
+                    <Label fx:id="countError" text="0" />
+                    <Label text=" errors" />
                 </HBox>
             </JFXToggleNode>
             <JFXToggleNode fx:id="toggleWarning" pickOnBounds="false" styleClass="toggle-warning">
                 <HBox>
-                    <Label text="0" fx:id="countWarning"/>
-                    <Label text=" warnings"/>
+                    <Label fx:id="countWarning" text="0" />
+                    <Label text=" warnings" />
                 </HBox>
             </JFXToggleNode>
             <JFXToggleNode fx:id="toggleInfo" pickOnBounds="false" styleClass="toggle-info">
                 <HBox>
-                    <Label text="0" fx:id="countInfo"/>
-                    <Label text=" infos"/>
+                    <Label fx:id="countInfo" text="0" />
+                    <Label text=" infos" />
                 </HBox>
             </JFXToggleNode>
             <JFXToggleNode fx:id="toggleDebug" pickOnBounds="false" styleClass="toggle-debug">
                 <HBox>
-                    <Label text="0" fx:id="countDebug"/>
-                    <Label text=" debugs"/>
+                    <Label fx:id="countDebug" text="0" />
+                    <Label text=" debugs" />
                 </HBox>
             </JFXToggleNode>
         </HBox>
     </AnchorPane>
+    
+    <JFXTreeTableView fx:id="logTableView" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="50.0">
+        <columns>
+            <JFXTreeTableColumn fx:id="timeColumn" editable="false" prefWidth="60" text="Date" />
+            <JFXTreeTableColumn fx:id="ownerColumn" editable="false" prefWidth="100" text="Owner" />
+            <JFXTreeTableColumn fx:id="threadColumn" editable="false" prefWidth="100" text="Thread" />
+            <JFXTreeTableColumn fx:id="contentColumn" editable="false" prefWidth="460" sortable="false" text="Content" />
+        </columns>
+    </JFXTreeTableView>
 </AnchorPane>
